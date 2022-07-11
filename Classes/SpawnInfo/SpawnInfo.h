@@ -4,7 +4,7 @@
 // By setting a stage instance to have several spawn info instances,
 // an instance file can be used as a sort of "beatmap" for the stage
 
-#include "GameEngineLib/Objects/Spatial/Object_Spatial.h"
+#include "../../_GameEngineSrc/Objects/Spatial/Object_Spatial.h"
 #include "../Timer/Timer.h"
 
 const auto OBJECT_CLASS_SPAWN_INFO = "SpawnInfo";

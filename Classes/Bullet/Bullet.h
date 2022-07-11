@@ -1,7 +1,7 @@
 #ifndef OBJECT_BULLET
 #define OBJECT_BULLET
 
-#include "GameEngineLib/Objects/Collision/Object_Collision.h"
+#include "../../_GameEngineSrc/Objects/Collision/Object_Collision.h"
 
 const auto OBJECT_CLASS_BULLET = "Bullet";
 

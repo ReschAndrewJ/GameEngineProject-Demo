@@ -1,5 +1,5 @@
 #ifndef VIEW_ENUMS
-#define VIEW_ENUMBS
+#define VIEW_ENUMS
 
 
 enum class VIEWS {

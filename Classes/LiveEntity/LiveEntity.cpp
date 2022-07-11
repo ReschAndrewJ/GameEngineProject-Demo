@@ -4,12 +4,16 @@
 #include "../Timer/Timer.h"
 #include "../Bullet/Bullet.h"
 
+const auto TIMER_NOT_FOUND = "NOT_FOUND";
 
 LiveEntity::LiveEntity() {
 	addClassIdentifier(OBJECT_CLASS_LIVE_ENTITY);
 
 	createAttribute(ATTRIBUTE_LIVE_ENTITY_MAX_HEALTH, Attribute::types::INTEGER);
 	createAttribute(ATTRIBUTE_LIVE_ENTITY_CURRENT_HEALTH, Attribute::types::INTEGER);
+	createAttribute(ATTRIBUTE_LIVE_ENTITY_MOVE_SPEED, Attribute::types::DOUBLE);
+	setAttribute(ATTRIBUTE_LIVE_ENTITY_MAX_HEALTH, 1);
+	setAttribute(ATTRIBUTE_LIVE_ENTITY_MOVE_SPEED, 100);
 
 	addAfterCreationFunction(&afterCreationFunc);
 	addProcessFunction(&processFunc, 5);
@@ -35,7 +39,7 @@ void LiveEntity::processFunc(Object* selfptr, float delta) {
 	LiveEntity* self = dynamic_cast<LiveEntity*>(selfptr);
 
 	// setup helper identifier for the iframe timer if not setup already
-	if (self->iFrameTimerIdentifier == "NOT_FOUND") {
+	if (self->iFrameTimerIdentifier == TIMER_NOT_FOUND) {
 		for (const std::string& childStr : self->getChildrenIdentifiers()) {
 			if (childStr.find("iframeTimer") != std::string::npos) {
 				self->iFrameTimerIdentifier = childStr;
@@ -45,7 +49,8 @@ void LiveEntity::processFunc(Object* selfptr, float delta) {
 	}
 
 	// handle iframe timeout
-	Object* iframeTimerPtr = self->getObject(self->iFrameTimerIdentifier);
+	Object* iframeTimerPtr = (self->iFrameTimerIdentifier == TIMER_NOT_FOUND) 
+		? nullptr : self->getObject(self->iFrameTimerIdentifier);
 	if (iframeTimerPtr != nullptr
 		&& (bool)iframeTimerPtr->getAttribute(ATTRIBUTE_TIMER_TIMEOUT)) {
 		self->setAttribute(ATTRIBUTE_COLLIDER_MASK_TARGET, self->helperCollisionMask);
@@ -54,11 +59,10 @@ void LiveEntity::processFunc(Object* selfptr, float delta) {
 	// get movement
 	float dir[3]{};
 	self->getMovementDirection(dir);
-	float lenSqr = dir[0] * dir[0] + dir[1] * dir[1] + dir[2] * dir[2];
 	std::vector<std::string> collisions = self->move(
-		dir[0] / lenSqr, dir[1] / lenSqr, dir[2] / lenSqr, delta,
+		dir[0], dir[1], dir[2], delta,
 		self->getAttribute(ATTRIBUTE_LIVE_ENTITY_MOVE_SPEED)
-	); // v / ||v||^2
+	);
 
 	// check collisions
 	if (collisions.size() != 0) {

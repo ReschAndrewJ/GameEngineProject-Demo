@@ -1,7 +1,7 @@
 #ifndef OBJECT_LIVE_ENTITY
 #define OBJECT_LIVE_ENTITY
 
-#include "GameEngineLib/Objects/ActiveCollision/Object_ActiveCollision.h"
+#include "../../_GameEngineSrc/Objects/ActiveCollision/Object_ActiveCollision.h"
 
 const auto OBJECT_CLASS_LIVE_ENTITY = "LiveEntity";
 

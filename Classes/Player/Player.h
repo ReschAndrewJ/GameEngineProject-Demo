@@ -3,7 +3,7 @@
 
 #include "../LiveEntity/LiveEntity.h"
 
-#include "GameEngineLib/Engines/Main/Input_Handler.h"
+#include "../../_GameEngineSrc/Engines/Main/Input_Handler.h"
 
 const auto OBJECT_CLASS_PLAYER = "Player";
 
@@ -20,7 +20,6 @@ public:
 
 protected:
 	// check if an attack condition is met and use that attack
-	// derived class should also handle attack cooldowns
 	virtual void doAttacks();
 
 protected:

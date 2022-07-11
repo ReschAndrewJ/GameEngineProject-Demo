@@ -7,6 +7,7 @@ Timer::Timer() {
 	createAttribute(ATTRIBUTE_TIMER_OFFSET, Attribute::types::DOUBLE);
 	createAttribute(ATTRIBUTE_TIMER_TIMEOUT, Attribute::types::BOOLEAN);
 	createAttribute(ATTRIBUTE_TIMER_LOOP, Attribute::types::BOOLEAN);
+	createAttribute(ATTRIBUTE_TIMER_RUNNING, Attribute::types::BOOLEAN);
 
 	addProcessFunction(&processFunc, 1);
 }

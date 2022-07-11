@@ -1,7 +1,7 @@
 #ifndef OBJECT_TIMER
 #define OBJECT_TIMER
 
-#include "GameEngineLib/Objects/Base/Object.h"
+#include "../../_GameEngineSrc/Objects/Base/Object.h"
 
 const auto OBJECT_CLASS_TIMER = "Timer";
 

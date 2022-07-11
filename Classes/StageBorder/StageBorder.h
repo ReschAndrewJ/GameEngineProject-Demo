@@ -1,8 +1,8 @@
 #ifndef OBJECT_STAGE_BORDER
 #define OBJECT_STAGE_BORDER
 
-#include "GameEngineLib/Objects/Collision/Object_Collision.h"
-#include "GameEngineLib/Objects/AnimatedSprite/Object_AnimatedSprite.h"
+#include "../../_GameEngineSrc/Objects/Collision/Object_Collision.h"
+#include "../../_GameEngineSrc/Objects/AnimatedSprite/Object_AnimatedSprite.h"
 
 const auto OBJECT_CLASS_STAGE_BORDER = "StageBorder";
 

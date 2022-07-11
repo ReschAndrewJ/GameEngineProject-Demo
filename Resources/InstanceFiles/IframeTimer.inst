@@ -2,7 +2,3 @@
 
 Object iframeTimer Timer
 
-Double TimerLength 0
-Double TimerRemaining 0
-Boolean TimerTimeout false
-Boolean TimerLoop false
