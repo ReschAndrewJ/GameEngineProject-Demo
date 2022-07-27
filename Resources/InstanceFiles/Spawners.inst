@@ -1,0 +1,33 @@
+
+#
+Object SpawnerA Spawner
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy2"
+
+Integer SpawnerCount 4
+Double TimerLength 0.8
+
+
+#
+Object SpawnerB MovingSpawner
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy3"
+
+Integer SpawnerCount 5
+Double TimerLength 0.8
+
+Double MovingSpawnerMoveX 50
+
+
+#
+Object SpawnerC MovingSpawner
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy4"
+
+Integer SpawnerCount 5
+Double TimerLength 0.8
+
+Double MovingSpawnerMoveX -50

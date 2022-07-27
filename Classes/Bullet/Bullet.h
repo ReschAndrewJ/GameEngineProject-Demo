@@ -16,7 +16,7 @@ public:
 	Bullet();
 	virtual ~Bullet();
 
-	// perform actions such as immediate despawn (default behavior) or bullet splitting
+	// perform actions when collided with
 	virtual void Bullet_onCollision() = 0;
 };
 

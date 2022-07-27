@@ -1,4 +1,4 @@
-#define SAMPLERUNSTAGE
+//#define SAMPLERUNSTAGE
 #ifdef SAMPLERUNSTAGE
 
 
@@ -36,7 +36,12 @@ public:
 	}
 
 protected:
-	bool isStageComplete() const override { return false; }
+	bool isStageComplete() const override {
+		if (inputptr->getKeyState(keys::Enter, input_states::JUST_PRESSED)) {
+			return true;
+		}
+		return false;
+	}
 };
 
 
@@ -49,6 +54,11 @@ int main() {
 	}
 	startInfo.rootObject_filePath = "sampleRunStage/sampleRunStage.inst";
 	startInfo.rootObject_objectName = "Control";
+
+	startInfo.aspectRatioHeight = 1;
+	startInfo.aspectRatioWidth = 1;
+	startInfo.windowHeight = 600;
+	startInfo.windowWidth = 600;
 
 	startInfo.AddedObjectCreateFunctions.push_back({ OBJECT_CLASS_PLAYER, [] { return (Object*)new Player(); } });
 	startInfo.AddedObjectCreateFunctions.push_back({ OBJECT_CLASS_STAGE_BORDER, [] { return (Object*)new StageBorder(); } });

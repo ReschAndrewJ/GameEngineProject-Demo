@@ -1,0 +1,141 @@
+
+############
+# Group A
+############
+
+Object GroupA-1 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/BossSpawns.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+
+Double TimerLength 4
+
+Double SpatialPosX -300
+Double SpatialPosY -300
+Double SpatialPosZ 200
+
+Double SpatialNod 45
+Double SpatialTurn -90
+
+#
+Object GroupA-2 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/BossSpawns.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+
+Double TimerLength 4
+
+Double SpatialPosX -200
+Double SpatialPosY -300
+Double SpatialPosZ 200
+
+Double SpatialNod 45
+Double SpatialTurn -90
+
+#
+Object GroupA-3 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/BossSpawns.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+
+Double TimerLength 4
+
+Double SpatialPosX -300
+Double SpatialPosY -200
+Double SpatialPosZ 200
+
+Double SpatialNod 45
+Double SpatialTurn -90
+
+
+##
+Object SpawnerA Spawner
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy6"
+
+Integer SpawnerCount -1
+Double TimerLength 15
+
+
+
+############
+# Group B
+############
+
+
+Object GroupB-1 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/BossSpawns.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+
+Double TimerLength 7
+
+Double SpatialPosX 300
+Double SpatialPosY -300
+Double SpatialPosZ 200
+
+Double SpatialNod 45
+Double SpatialTurn 90
+
+#
+Object GroupB-2 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/BossSpawns.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+
+Double TimerLength 7
+
+Double SpatialPosX 200
+Double SpatialPosY -300
+Double SpatialPosZ 200
+
+Double SpatialNod 45
+Double SpatialTurn 90
+
+#
+Object GroupB-3 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/BossSpawns.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+
+Double TimerLength 7
+
+Double SpatialPosX 300
+Double SpatialPosY -200
+Double SpatialPosZ 200
+
+Double SpatialNod 45
+Double SpatialTurn 90
+
+
+############
+# Group C
+############
+
+
+Object GroupC-1 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/BossSpawns.inst"
+String SpawnInfoEntityIdentifier "SpawnerC"
+
+Double TimerLength 3
+
+
+
+##
+Object SpawnerC RandPosSpawner
+
+Double RandPosSpawnerMinX -280
+Double RandPosSpawnerMinY -280
+Double RandPosSpawnerMinZ -320
+Double RandPosSpawnerMaxX 280
+Double RandPosSpawnerMaxY 280
+Double RandPosSpawnerMaxZ -319
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy7"
+
+Integer SpawnerCount -1
+Double TimerLength 1
+

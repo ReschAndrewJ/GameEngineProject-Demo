@@ -1,0 +1,205 @@
+
+# back view, Boss Fight
+Object Stage1-Boss Stage_Boss
+
+#BACK
+Integer StageView 3
+Double StageBackDistance 500
+Double StageStartZ 200
+
+String StageNextFilepath "Resources/InstanceFiles/CreditsStage.inst"
+String StageNextIdentifier "CreditsStage"
+Boolean StageTransitionSmooth true
+
+Double StageLength 600
+
+String SoundFilepath "Resources/Sounds/Of Far Different Nature - LOOP BOX #2 (CC-BY 4.0)/Of Far Different Nature - Le Flamand [v2] (CC-BY).ogg"
+Boolean SoundIsMusic true
+Boolean SoundLoop true
+Double SoundStart 0
+Double SoundEnd 22
+Double SoundVolume 20
+
+Child Here TopBorder
+Child Here BottomBorder
+Child Here FrontBorder
+Child Here BackBorder
+Child Here LeftBorder
+Child Here RightBorder
+
+Child Here Boss
+
+Child "Resources/InstanceFiles/Stage1.inst" DespawnBox
+
+# spawnInfos
+
+Child "Resources/InstanceFiles/BossSpawns.inst" GroupA-1
+Child "Resources/InstanceFiles/BossSpawns.inst" GroupA-2
+Child "Resources/InstanceFiles/BossSpawns.inst" GroupA-3
+
+Child "Resources/InstanceFiles/BossSpawns.inst" GroupB-1
+Child "Resources/InstanceFiles/BossSpawns.inst" GroupB-2
+Child "Resources/InstanceFiles/BossSpawns.inst" GroupB-3
+
+Child "Resources/InstanceFiles/BossSpawns.inst" GroupC-1
+
+
+########################################
+######
+Object Boss Boss
+
+Double BossMinX -280
+Double BossMaxX 280
+Double BossMinY -280
+Double BossMaxY 280
+Double BossMinZ -280
+Double BossMaxZ 100
+
+Integer LiveEntityMaxHealth 50
+Double BossSpeed 100
+
+Double SpatialPosZ -280
+Double SpatialPosX 0
+Double SpatialPosY 0
+
+Double SpatialScaleX 4
+Double SpatialScaleY 4
+
+Double ColliderWidth 25
+Double ColliderHeight 25
+Double ColliderDepth 20
+
+Integer BulletPower 3
+Double BulletITime 1.2
+
+Child Here BossSpriteFront
+Child Here BossSpriteBack
+
+
+######
+Object BossSpriteFront Object_Sprite
+
+Double SpriteWidth 20
+Double SpriteHeight 20
+
+Double SpatialPosZ 10
+
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/ufoBlue.png"
+
+#######
+Object BossSpriteBack Object_Sprite
+
+Double SpriteWidth 30
+Double SpriteHeight 30
+
+Double SpatialPosZ -10
+
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/ufoYellow.png"
+
+
+
+
+
+####################################################
+# Borders
+#################################
+Object TopBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Purple Nebula/Purple Nebula 6.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY -300
+Double SpatialNod 90
+
+#################################
+Object BottomBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Purple Nebula/Purple Nebula 6.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY 300
+Double SpatialNod 90
+
+#################################
+Object LeftBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Purple Nebula/Purple Nebula 6.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX -300
+Double SpatialTurn 90
+
+#################################
+Object RightBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Purple Nebula/Purple Nebula 6.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 3
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX 300
+Double SpatialTurn 90
+
+#################################
+Object FrontBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Purple Nebula/Purple Nebula 4.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 2
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ 300
+
+#################################
+Object BackBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Purple Nebula/Purple Nebula 8.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ -300
+
+
+
+
+

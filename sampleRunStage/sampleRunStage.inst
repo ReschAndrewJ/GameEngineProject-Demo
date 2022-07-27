@@ -1,129 +1,17 @@
 
 Object Control StageControl
 
-Double CameraFOV 80
+Double CameraFOV 90
 Double MinCameraDepth 1
-Double MaxCameraDepth 1200
+Double MaxCameraDepth 1500
+Double SpatialPosZ 0
 
-Child Here sampleStage
+String StageControlStartingFile sampleRunStage/SampleRunStage.inst
+String StageControlStartingId sampleStage
+Integer StageControlTransitionState 1
 
-
-Object sampleStage RotSampleStage
-Integer StageView 0
-
-Double StageBackDistance 500
-Double StageSideDistance 300
-Double StageTopDistance 300
-
-Child Here TopBorder
-Child Here BottomBorder
-Child Here LeftBorder
-Child Here RightBorder
-Child Here FrontBorder
-Child Here BackBorder
-
-Child Here SamplePlayer
-
-#
-Object TopBorder StageBorder
-
-String SpriteFilepath "sampleRunStage/test_img2.png"
-Integer AnimatedSpriteRowCnt 1
-Integer AnimatedSpriteColCnt 1
-Boolean SpriteIsVisible true
-
-Double SpriteWidth 600
-Double SpriteHeight 1000
-Double ColliderWidth 600
-Double ColliderHeight 1000
-Double ColliderDepth 1
-
-Double SpatialPosY -300
-Double SpatialNod 90
-
-#
-Object BottomBorder StageBorder
-
-String SpriteFilepath "sampleRunStage/test_img2.png"
-Integer AnimatedSpriteRowCnt 1
-Integer AnimatedSpriteColCnt 1
-Boolean SpriteIsVisible true
-
-Double SpriteWidth 600
-Double SpriteHeight 1000
-Double ColliderWidth 600
-Double ColliderHeight 1000
-Double ColliderDepth 1
-
-Double SpatialPosY 300
-Double SpatialNod 90
-
-#
-Object LeftBorder StageBorder
-
-String SpriteFilepath "sampleRunStage/test_img1.png"
-Integer AnimatedSpriteRowCnt 1
-Integer AnimatedSpriteColCnt 1
-Boolean SpriteIsVisible true
-
-Double SpriteWidth 1000
-Double SpriteHeight 600
-Double ColliderWidth 1000
-Double ColliderHeight 600
-Double ColliderDepth 1
-
-Double SpatialPosX -300
-Double SpatialTurn 90
-
-#
-Object RightBorder StageBorder
-
-String SpriteFilepath "sampleRunStage/test_img1.png"
-Integer AnimatedSpriteRowCnt 1
-Integer AnimatedSpriteColCnt 1
-Boolean SpriteIsVisible true
-
-Double SpriteWidth 1000
-Double SpriteHeight 600
-Double ColliderWidth 1000
-Double ColliderHeight 600
-Double ColliderDepth 1
-
-Double SpatialPosX 300
-Double SpatialTurn 90
-
-#
-Object FrontBorder StageBorder
-
-String SpriteFilepath "sampleRunStage/test_img3.png"
-Integer AnimatedSpriteRowCnt 1
-Integer AnimatedSpriteColCnt 1
-Boolean SpriteIsVisible true
-
-Double SpriteWidth 600
-Double SpriteHeight 600
-Double ColliderWidth 600
-Double ColliderHeight 600
-Double ColliderDepth 1
-
-Double SpatialPosZ 500
-
-#
-Object BackBorder StageBorder
-
-String SpriteFilepath "sampleRunStage/test_img3.png"
-Integer AnimatedSpriteRowCnt 1
-Integer AnimatedSpriteColCnt 1
-Boolean SpriteIsVisible true
-
-Double SpriteWidth 600
-Double SpriteHeight 600
-Double ColliderWidth 600
-Double ColliderHeight 600
-Double ColliderDepth 1
-
-Double SpatialPosZ -500
-
+Child Here SamplePlayer 
+# SamplePlayer starts in Control and is moved to the stages
 
 #
 Object SamplePlayer Player
@@ -156,3 +44,244 @@ String SpriteFilepath "sampleRunStage/test_img4.png"
 Double SpriteWidth 10
 Double SpriteHeight 20
 Double SpatialTurn -90
+
+
+################################################################################################
+Object sampleStage RotSampleStage
+Integer StageView 3
+
+String StageNextFilepath "sampleRunStage/SampleRunStage.inst"
+String StageNextIdentifier "sampleStage2"
+Boolean StageTransitionSmooth true
+
+Double StageBackDistance 600
+Double StageSideDistance 600
+Double StageTopDistance 600
+
+Double StageLength 600
+
+Child Here TopBorder
+Child Here BottomBorder
+Child Here LeftBorder
+Child Here RightBorder
+Child Here FrontBorder
+Child Here BackBorder
+
+
+#
+Object TopBorder StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img2.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY -300
+Double SpatialNod 90
+
+#
+Object BottomBorder StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img2.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY 300
+Double SpatialNod 90
+
+#
+Object LeftBorder StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img1.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX -300
+Double SpatialTurn 90
+
+#
+Object RightBorder StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img1.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 3
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX 300
+Double SpatialTurn 90
+
+#
+Object FrontBorder StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 2
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ 300
+
+#
+Object BackBorder StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ -300
+
+
+
+###############################################################################
+Object sampleStage2 RotSampleStage
+Integer StageView 2
+
+Double StageBackDistance 400
+Double StageSideDistance 400
+Double StageTopDistance 400
+
+Double StageLength 400
+
+String StageNextFilepath "sampleRunStage/SampleRunStage.inst"
+String StageNextIdentifier sampleStage
+Boolean StageTransitionSmooth true
+
+Child Here TopBorder2
+Child Here BottomBorder2
+Child Here LeftBorder2
+Child Here RightBorder2
+Child Here FrontBorder2
+Child Here BackBorder2
+
+
+#
+Object TopBorder2 StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img1.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 1
+
+Double SpriteWidth 400
+Double SpriteHeight 400
+Double ColliderWidth 400
+Double ColliderHeight 400
+Double ColliderDepth 1
+
+Double SpatialPosY -200
+Double SpatialNod 90
+
+#
+Object BottomBorder2 StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img1.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 400
+Double SpriteHeight 400
+Double ColliderWidth 400
+Double ColliderHeight 400
+Double ColliderDepth 1
+
+Double SpatialPosY 200
+Double SpatialNod 90
+
+#
+Object LeftBorder2 StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 400
+Double SpriteHeight 400
+Double ColliderWidth 400
+Double ColliderHeight 400
+Double ColliderDepth 1
+
+Double SpatialPosX -200
+Double SpatialTurn 90
+
+#
+Object RightBorder2 StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 3
+
+Double SpriteWidth 400
+Double SpriteHeight 400
+Double ColliderWidth 400
+Double ColliderHeight 400
+Double ColliderDepth 1
+
+Double SpatialPosX 200
+Double SpatialTurn 90
+
+#
+Object FrontBorder2 StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img2.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 2
+
+Double SpriteWidth 400
+Double SpriteHeight 400
+Double ColliderWidth 400
+Double ColliderHeight 400
+Double ColliderDepth 1
+
+Double SpatialPosZ 200
+
+#
+Object BackBorder2 StageBorder
+
+String SpriteFilepath "sampleRunStage/test_img2.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 400
+Double SpriteHeight 400
+Double ColliderWidth 400
+Double ColliderHeight 400
+Double ColliderDepth 1
+
+Double SpatialPosZ -200

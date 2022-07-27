@@ -1,0 +1,176 @@
+
+
+
+
+#############################
+Object PlayerAttackA TypeABullet
+
+Integer BulletPower 2
+
+String TypeABulletHitSoundFile "Resources/Sounds/space-shooter-vol-1_wav/Weapons - Lasers/0022_spaceship user - laser impact with shields disabled metallic hit small.wav"
+
+Double TypeABulletDirectionZ -1
+Double TypeABulletSpeed 600
+
+Integer ColliderMask 32
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 2
+Double SpatialScaleY 2
+Double SpatialScaleZ 2
+
+Child Here PlayerAttackA_TopSprite
+Child Here PlayerAttackA_BackSprite
+Child Here PlayerAttackA_SideSprite
+
+#
+Object PlayerAttackA_TopSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_player.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialNod 90
+
+Boolean SpriteIsVisible true
+
+#
+Object PlayerAttackA_BackSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_player.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+
+Boolean SpriteIsVisible true
+
+#
+Object PlayerAttackA_SideSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_player.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialTurn 90
+
+Boolean SpriteIsVisible true
+
+#############################
+
+Object EnemyAttackA TypeABullet
+
+Integer BulletPower 2
+Double BulletITime 0.75
+
+String TypeABulletHitSoundFile "Resources/Sounds/space-shooter-vol-1_wav/Weapons - Lasers/0022_spaceship user - laser impact with shields disabled metallic hit big.wav"
+
+Double TypeABulletDirectionZ -1
+Double TypeABulletSpeed 350
+
+Integer ColliderMask 16
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 1.5
+Double SpatialScaleY 1.5
+Double SpatialScaleZ 1.5
+
+Child Here EnemyAttackA_TopSprite
+Child Here EnemyAttackA_BackSprite
+Child Here EnemyAttackA_SideSprite
+
+#
+Object EnemyAttackA_TopSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_enemy.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialNod 90
+
+Boolean SpriteIsVisible true
+
+#
+Object EnemyAttackA_BackSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_enemy.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+
+Boolean SpriteIsVisible true
+
+#
+Object EnemyAttackA_SideSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_enemy.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialTurn 90
+
+Boolean SpriteIsVisible true
+
+
+#############################
+
+Object EnemyAttackA2 TypeABullet
+
+Integer BulletPower 1
+Double BulletITime 0
+
+String TypeABulletHitSoundFile "Resources/Sounds/space-shooter-vol-1_wav/Weapons - Lasers/0022_spaceship user - laser impact with shields disabled metallic hit small.wav"
+
+Double TypeABulletDirectionZ -1
+Double TypeABulletSpeed 1000
+
+Integer ColliderMask 16
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 1
+Double SpatialScaleY 1
+Double SpatialScaleZ 1
+
+Child Here EnemyAttackA2_TopSprite
+Child Here EnemyAttackA2_BackSprite
+Child Here EnemyAttackA2_SideSprite
+
+#
+Object EnemyAttackA2_TopSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_enemy.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialNod 90
+
+Boolean SpriteIsVisible true
+
+#
+Object EnemyAttackA2_BackSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_enemy.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+
+Boolean SpriteIsVisible true
+
+#
+Object EnemyAttackA2_SideSprite Object_Sprite
+
+String SpriteFilepath "Resources/Textures/bullet_enemy.png"
+
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialTurn 90
+
+Boolean SpriteIsVisible true

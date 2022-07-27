@@ -1,0 +1,458 @@
+####################################################
+# Stage Segments
+#################################
+# top view
+Object Stage1-1 Stage_Survival
+
+#			segment.wave.individual
+Child Here spawn1.1.1
+Child Here spawn1.1.2
+Child Here spawn1.1.3
+Child Here spawn1.2.1
+Child Here spawn1.2.2
+Child Here spawn1.3.1
+Child Here spawn1.3.2
+
+#TOP
+Integer StageView 1 
+Double StageTopDistance 300
+Double StageStartZ 150
+
+String StageNextFilepath "Resources/InstanceFiles/Stage1.inst"
+String StageNextIdentifier "Stage1-2"
+Boolean StageTransitionSmooth true
+
+Double StageSurvivalEndTime 20
+
+Double StageLength 600
+
+String SoundFilepath "Resources/Sounds/Of Far Different Nature - LOOP BOX #2 (CC-BY 4.0)/Of Far Different Nature - Voltage (CC-BY).ogg"
+Boolean SoundIsMusic true
+Boolean SoundLoop true
+Double SoundStart 0
+Double SoundEnd 23
+Double SoundVolume 10
+
+Child Here TopBorder
+Child Here BottomBorder
+Child Here FrontBorder
+Child Here BackBorder
+Child Here LeftBorder
+Child Here RightBorder
+
+Child Here DespawnBox
+
+#################################
+# side view
+Object Stage1-2 Stage_Survival
+
+Child Here spawn2.1.1
+Child Here spawn2.1.2
+Child Here spawn2.1.3
+Child Here spawn2.1.4
+Child Here spawn2.1.5
+Child Here spawn2.1.6
+Child Here spawn2.1.7
+Child Here spawn2.1.8
+Child Here spawn2.1.9
+Child Here spawn2.1.10
+
+#SIDE
+Integer StageView 2
+Double StageSideDistance 300
+Double StageStartZ 150
+
+String StageNextFilepath "Resources/InstanceFiles/DemoBossStage.inst"
+String StageNextIdentifier "Stage1-Boss"
+Boolean StageTransitionSmooth true
+
+Double StageSurvivalEndTime 15
+
+Double StageLength 600
+
+String SoundFilepath "Resources/Sounds/Of Far Different Nature - LOOP BOX #2 (CC-BY 4.0)/Of Far Different Nature - Voltage (CC-BY).ogg"
+Boolean SoundIsMusic true
+Boolean SoundLoop true
+Double SoundStart 0
+Double SoundEnd 23
+Double SoundVolume 10
+
+Child Here TopBorder
+Child Here BottomBorder
+Child Here FrontBorder
+Child Here BackBorder
+Child Here LeftBorder
+Child Here RightBorder
+
+Child Here DespawnBox
+
+
+
+####################################################
+# Borders
+#################################
+Object TopBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 8.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY -300
+Double SpatialNod 90
+
+#################################
+Object BottomBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 8.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY 300
+Double SpatialNod 90
+
+#################################
+Object LeftBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 8.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX -300
+Double SpatialTurn 90
+
+#################################
+Object RightBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 8.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 3
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX 300
+Double SpatialTurn 90
+
+#################################
+Object FrontBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 8.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 2
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ 300
+
+#################################
+Object BackBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 6.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ -300
+
+
+####################################################
+# Despawn Box
+#################################
+
+Object DespawnBox DespawnBox
+
+Child Here DespawnTop
+Child Here DespawnBottom
+Child Here DespawnLeft
+Child Here DespawnRight
+Child Here DespawnFront
+Child Here DespawnBack
+
+#
+Object DespawnTop Object_Collision
+
+Double ColliderWidth 700
+Double ColliderDepth 700
+Double ColliderHeight 1
+
+Double SpatialPosY -350
+Integer ColliderMaskTarget 255
+
+#
+Object DespawnBottom Object_Collision
+
+Double ColliderWidth 700
+Double ColliderDepth 700
+Double ColliderHeight 1
+
+Double SpatialPosY 350
+Integer ColliderMaskTarget 255
+
+#
+Object DespawnFront Object_Collision
+
+Double ColliderWidth 700
+Double ColliderDepth 1
+Double ColliderHeight 700
+
+Double SpatialPosZ 350
+Integer ColliderMaskTarget 255
+
+#
+Object DespawnBack Object_Collision
+
+Double ColliderWidth 700
+Double ColliderDepth 1
+Double ColliderHeight 700
+
+Double SpatialPosZ -350
+Integer ColliderMaskTarget 255
+
+#
+Object DespawnLeft Object_Collision
+
+Double ColliderWidth 1
+Double ColliderDepth 700
+Double ColliderHeight 700
+
+Double SpatialPosX -350
+Integer ColliderMaskTarget 255
+
+#
+Object DespawnRight Object_Collision
+
+Double ColliderWidth 1
+Double ColliderDepth 700
+Double ColliderHeight 700
+
+Double SpatialPosX 350
+Integer ColliderMaskTarget 255
+
+
+####################################################
+# 1-1 SpawnInfos
+#################################
+
+#
+Object spawn1.1.1 SpawnInfo 
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy1"
+Double TimerLength 1
+
+Double SpatialPosX 0
+Double SpatialPosZ -320
+
+#
+Object spawn1.1.2 SpawnInfo 
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy1"
+Double TimerLength 1.5
+
+Double SpatialPosX 50
+Double SpatialPosZ -320
+
+#
+Object spawn1.1.3 SpawnInfo 
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy1"
+Double TimerLength 1.7
+
+Double SpatialPosX -70
+Double SpatialPosZ -320
+
+#################################
+#
+Object spawn1.2.1 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/Spawners.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+Double TimerLength 2.2
+
+Double SpatialPosX -240
+Double SpatialPosZ -320
+
+Object spawn1.2.2 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/Spawners.inst"
+String SpawnInfoEntityIdentifier "SpawnerA"
+Double TimerLength 5
+
+Double SpatialPosX 240
+Double SpatialPosZ -320
+
+#################################
+
+#
+Object spawn1.3.1 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/Spawners.inst"
+String SpawnInfoEntityIdentifier "SpawnerB"
+Double TimerLength 8
+
+Double SpatialPosX -240
+Double SpatialPosZ -320
+
+
+#
+Object spawn1.3.2 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/Spawners.inst"
+String SpawnInfoEntityIdentifier "SpawnerC"
+Double TimerLength 8
+
+Double SpatialPosX 240
+Double SpatialPosZ -320
+
+
+####################################################
+# 1-2 SpawnInfos
+#################################
+
+#
+Object spawn2.1.1 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY -270
+Double SpatialPosZ -320
+
+#
+Object spawn2.1.2 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY -210
+Double SpatialPosZ -320
+
+#
+Object spawn2.1.3 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY -150
+Double SpatialPosZ -320
+
+#
+Object spawn2.1.4 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY -90
+Double SpatialPosZ -320
+
+#
+Object spawn2.1.5 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY -30
+Double SpatialPosZ -320
+
+
+#
+Object spawn2.1.6 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY 30
+Double SpatialPosZ -320
+
+#
+Object spawn2.1.7 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY 90
+Double SpatialPosZ -320
+
+
+#
+Object spawn2.1.8 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY 150
+Double SpatialPosZ -320
+
+#
+Object spawn2.1.9 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY 210
+Double SpatialPosZ -320
+
+
+#
+Object spawn2.1.10 SpawnInfo
+
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/NormalEnemies.inst"
+String SpawnInfoEntityIdentifier "Enemy5"
+
+Double TimerLength 1
+
+Double SpatialPosY 270
+Double SpatialPosZ -320

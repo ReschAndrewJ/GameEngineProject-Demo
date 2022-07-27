@@ -4,7 +4,6 @@
 #include "../Timer/Timer.h"
 #include "../Bullet/Bullet.h"
 
-const auto TIMER_NOT_FOUND = "NOT_FOUND";
 
 LiveEntity::LiveEntity() {
 	addClassIdentifier(OBJECT_CLASS_LIVE_ENTITY);
@@ -15,13 +14,15 @@ LiveEntity::LiveEntity() {
 	setAttribute(ATTRIBUTE_LIVE_ENTITY_MAX_HEALTH, 1);
 	setAttribute(ATTRIBUTE_LIVE_ENTITY_MOVE_SPEED, 100);
 
+	createAttribute(ATTRIBUTE_LIVE_ENTITY_IFRAME_MASK, Attribute::types::INTEGER);
+
 	addAfterCreationFunction(&afterCreationFunc);
 	addProcessFunction(&processFunc, 5);
 }
 LiveEntity::~LiveEntity() {}
 
 void LiveEntity::onDeath() { queueDestroyObject(getIdentifier()); }
-
+void LiveEntity::onDamage() {}
 
 void LiveEntity::afterCreationFunc(Object* selfptr) {
 	if ((bool)selfptr->getAttribute(ATTRIBUTE_LIVE_ENTITY_CURRENT_HEALTH) == 0) {
@@ -31,7 +32,7 @@ void LiveEntity::afterCreationFunc(Object* selfptr) {
 
 	dynamic_cast<LiveEntity*>(selfptr)->helperCollisionMask = selfptr->getAttribute(ATTRIBUTE_COLLIDER_MASK_TARGET);
 
-	selfptr->queueCreateObject("Resources/InstanceFiles/IframeTimer.inst", "iframeTimer", selfptr->getIdentifier(), {});
+	selfptr->queueCreateObject("Resources/InstanceFiles/EmptyInsts.inst", "emptyTimer", selfptr->getIdentifier(), {});
 }
 
 
@@ -41,7 +42,7 @@ void LiveEntity::processFunc(Object* selfptr, float delta) {
 	// setup helper identifier for the iframe timer if not setup already
 	if (self->iFrameTimerIdentifier == TIMER_NOT_FOUND) {
 		for (const std::string& childStr : self->getChildrenIdentifiers()) {
-			if (childStr.find("iframeTimer") != std::string::npos) {
+			if (childStr.find("emptyTimer") != std::string::npos) {
 				self->iFrameTimerIdentifier = childStr;
 				break;
 			}
@@ -79,6 +80,7 @@ void LiveEntity::processFunc(Object* selfptr, float delta) {
 					iTime = bulletPtr->getAttribute(ATTRIBUTE_BULLET_ITIME);
 				}
 				bulletPtr->Bullet_onCollision();
+				self->onDamage();
 			}
 
 		}
@@ -86,7 +88,7 @@ void LiveEntity::processFunc(Object* selfptr, float delta) {
 		if (iframeTimerPtr != nullptr) {
 			iframeTimerPtr->setAttribute(ATTRIBUTE_TIMER_LENGTH, iTime);
 			dynamic_cast<Timer*>(iframeTimerPtr)->startTimer();
-			self->setAttribute(ATTRIBUTE_COLLIDER_MASK_TARGET, (int)Collision_Masks::BOUNDARY);
+			self->setAttribute(ATTRIBUTE_COLLIDER_MASK_TARGET, self->getAttribute(ATTRIBUTE_LIVE_ENTITY_IFRAME_MASK));
 		}
 		self->setAttribute(ATTRIBUTE_LIVE_ENTITY_CURRENT_HEALTH, currHealth);
 

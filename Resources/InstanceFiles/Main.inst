@@ -1,0 +1,156 @@
+#
+Object Game GameContainer
+
+Child Here Control
+Child Here HealthDisplayContainer
+Child Here BossHealthBarContainer
+
+
+#########################
+#
+Object Control StageControl
+
+Integer StageControlTransitionState 1
+
+String StageControlStartingFile "Resources/InstanceFiles/Stage1.inst"
+String StageControlStartingId "Stage1-1"
+
+Double CameraFOV 30
+Double MinCameraDepth 1
+Double MaxCameraDepth 2400
+Double SpatialPosZ 900
+
+Child Here Player
+
+###
+Object SkipToBoss GameContainer
+Child Here BossControl
+Child Here HealthDisplayContainer
+Child Here BossHealthBarContainer
+
+Object BossControl StageControl
+Integer StageControlTransitionState 1
+String StageControlStartingFile "Resources/InstanceFiles/DemoBossStage.inst"
+String StageControlStartingId "Stage1-Boss"
+Double CameraFOV 30
+Double MinCameraDepth 1
+Double MaxCameraDepth 2400
+Double SpatialPosZ 900
+Child Here Player
+###
+Object SkipToCredits GameContainer
+Child Here CreditsControl
+
+Object CreditsControl StageControl
+Integer StageControlTransitionState 1
+String StageControlStartingFile "Resources/InstanceFiles/CreditsStage.inst"
+String StageControlStartingId "CreditsStage"
+Double CameraFOV 30
+Double MinCameraDepth 1
+Double MaxCameraDepth 2400
+Double SpatialPosZ 900
+Child Here Player
+###
+
+#########################
+#
+Object Player Player_TypeA
+
+String PlayerTypeABulletFile "Resources/InstanceFiles/Attacks.inst"
+String PlayerTypeABulletId "PlayerAttackA"
+Double PlayerTypeACooldown 0.4
+
+String PlayerTypeABulletFireSound "Resources/Sounds/space-shooter-vol-1_wav/Weapons - Lasers/0022_spaceship user - special synthetic weapon fire 2.wav"
+String PlayerDamageSound "Resources/Sounds/space-shooter-vol-1_wav/Explosions/0022_explosion_3.wav"
+
+Integer LiveEntityMaxHealth 8
+Double LiveEntitySpeed 250
+Integer LiveEntityIFrameMask 2
+
+Double ColliderWidth 8
+Double ColliderHeight 8
+Double ColliderDepth 8
+
+Double SpatialScaleX 6
+Double SpatialScaleY 6
+Double SpatialScaleZ 6
+
+Child Here PlayerUpSprite
+Child Here PlayerBackSprite
+Child Here PlayerSideSprite
+
+
+#########################
+#
+Object PlayerUpSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/playerShip1_orange.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialNod 90
+
+#
+Object PlayerBackSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/playerShip2_orange.png"
+Double SpriteWidth 10
+Double SpriteHeight 5
+Double SpatialPosZ 0
+
+#
+Object PlayerSideSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/playerShip1_orange.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialTurn -90
+Double SpatialTilt -90
+
+
+#########################
+#
+Object HealthDisplayContainer HealthBarContainer
+String SpriteFilepath "Resources/Textures/PlayerHealthBarContainer.png"
+Double SpriteWidth 1
+Double SpriteHeight 0.2
+
+Double SpatialPosX -0.7
+Double SpatialPosY -0.9
+Double SpatialPosZ 0
+
+Double SpatialScaleX 0.55
+Double SpatialScaleY 0.3
+
+Child Here HealthDisplay
+
+#
+Object HealthDisplay PlayerHealthDisplay
+
+String SpriteFilepath "Resources/Textures/PlayerHealthBar.png"
+Double SpriteWidth 1
+Double SpriteHeight 0.2
+Boolean SpriteIsVisible true
+Double SpatialPosZ 0.01
+
+
+#
+Object BossHealthBarContainer HealthBarContainer
+
+String SpriteFilepath "Resources/Textures/BossHealthBarContainer.png"
+Double SpriteWidth 1
+Double SpriteHeight 0.2
+
+Double SpatialPosX 0.3
+Double SpatialPosY -0.9
+Double SpatialPosZ 0
+
+Double SpatialScaleX 1.3
+Double SpatialScaleY 0.4
+
+Child Here BossHealthBar
+
+Object BossHealthBar BossHealthBar
+
+String SpriteFilepath "Resources/Textures/BossHealthBar.png"
+Double SpriteWidth 1
+Double SpriteHeight 0.2
+Double SpatialPosZ 0.01
+
+

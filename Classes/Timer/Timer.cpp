@@ -21,6 +21,7 @@ void Timer::processFunc(Object* selfptr, float delta) {
 	offset += delta;
 
 	if (offset >= (float)selfptr->getAttribute(ATTRIBUTE_TIMER_LENGTH)) {
+
 		selfptr->setAttribute(ATTRIBUTE_TIMER_TIMEOUT, true);
 		selfptr->setAttribute(ATTRIBUTE_TIMER_RUNNING, false);
 		if ((bool)selfptr->getAttribute(ATTRIBUTE_TIMER_LOOP)) {

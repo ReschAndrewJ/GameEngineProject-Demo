@@ -2,11 +2,11 @@
 #define COLLISION_MASKS
 
 enum class Collision_Masks {
-	BOUNDARY = 1,
-	PLAYER = 2,
-	ENEMY = 4,
-	BULLET_ENEMY = 8,
-	BULLET_PLAYER = 16
+	BOUNDARY = 2,
+	PLAYER = 4,
+	ENEMY = 8,
+	BULLET_ENEMY = 16,
+	BULLET_PLAYER = 32
 
 };
 

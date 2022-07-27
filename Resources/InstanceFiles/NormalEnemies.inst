@@ -1,0 +1,267 @@
+
+
+
+##########################################
+# Enemies
+########################
+Object Enemy1 EnemyA
+
+# EnemyA uses bullet as a base class to deal contact damage
+Integer BulletPower 3
+Double BulletITime 1
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 5
+Double SpatialScaleY 5
+Double SpatialScaleZ 5
+
+Double LiveEntitySpeed 700
+
+Child Here EnemyATopSprite
+Child Here EnemyAFrontSprite
+Child Here EnemyASideSprite
+
+
+########################
+
+
+Object Enemy2 EnemyB
+
+# EnemyB enemies shoot at the player when the player is not behind the enemy
+String EnemyBBulletFile "Resources/InstanceFiles/Attacks.inst"
+String EnemyBBulletId "EnemyAttackA"
+Double TimerLength 2.5
+
+Double LiveEntitySpeed 75
+
+Integer BulletPower 3
+Double BulletITime 1
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 4
+Double SpatialScaleY 4
+Double SpatialScaleZ 4
+
+Child Here EnemyBTopSprite
+Child Here EnemyBFrontSprite
+Child Here EnemyBSideSprite
+
+
+########################
+
+
+Object Enemy3 EnemyC
+
+# EnemyC enemies shoot in a set direction
+String EnemyCBulletFile "Resources/InstanceFiles/Attacks.inst"
+String EnemyCBulletId "EnemyAttackA"
+Double TimerLength 2
+
+Double LiveEntitySpeed 50
+
+Double EnemyCBulletDirectionX 1
+Double EnemyCBulletDirectionZ 1
+
+Integer BulletPower 3
+Double BulletITime 1
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 4
+Double SpatialScaleY 4
+Double SpatialScaleZ 4
+
+Child Here EnemyCTopSprite
+Child Here EnemyCFrontSprite
+Child Here EnemyCSideSprite
+
+########################
+
+
+Object Enemy4 EnemyC
+
+String EnemyCBulletFile "Resources/InstanceFiles/Attacks.inst"
+String EnemyCBulletId "EnemyAttackA"
+Double TimerLength 2
+
+Double LiveEntitySpeed 50
+
+Double EnemyCBulletDirectionX -1
+Double EnemyCBulletDirectionZ 1
+
+Integer BulletPower 3
+Double BulletITime 1
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 4
+Double SpatialScaleY 4
+Double SpatialScaleZ 4
+
+Child Here EnemyCTopSprite
+Child Here EnemyCFrontSprite
+Child Here EnemyCSideSprite
+
+########################
+
+Object Enemy5 EnemyB
+
+String EnemyBBulletFile "Resources/InstanceFiles/Attacks.inst"
+String EnemyBBulletId "EnemyAttackA2"
+Double TimerLength 2
+
+Double LiveEntitySpeed 25
+
+Integer BulletPower 3
+Double BulletITime 1
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 4
+Double SpatialScaleY 4
+Double SpatialScaleZ 4
+
+Child Here EnemyBTopSprite
+Child Here EnemyBFrontSprite
+Child Here EnemyBSideSprite
+
+########################
+
+Object Enemy6 EnemyA
+
+Integer BulletPower 3
+Double BulletITime 1
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 4
+Double SpatialScaleY 4
+Double SpatialScaleZ 4
+
+Double LiveEntitySpeed 300
+
+Child Here EnemyATopSprite
+Child Here EnemyAFrontSprite
+Child Here EnemyASideSprite
+
+########################
+
+Object Enemy7 EnemyB
+
+String EnemyBBulletFile "Resources/InstanceFiles/Attacks.inst"
+String EnemyBBulletId "EnemyAttackA"
+Double TimerLength 1
+
+Double LiveEntitySpeed 300
+
+Integer BulletPower 3
+Double BulletITime 1
+
+Double ColliderWidth 10
+Double ColliderHeight 10
+Double ColliderDepth 10
+
+Double SpatialScaleX 5
+Double SpatialScaleY 5
+Double SpatialScaleZ 5
+
+Child Here EnemyBTopSprite
+Child Here EnemyBFrontSprite
+Child Here EnemyBSideSprite
+
+##########################################
+# Sprites
+########################
+
+#
+Object EnemyATopSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyRed5.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialNod -90
+Double SpatialTilt 180
+
+#
+Object EnemyAFrontSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyRed4.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialPosZ 0
+Double SpatialTilt 180
+
+
+#
+Object EnemyASideSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyRed5.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialTurn -90
+Double SpatialTilt 90
+
+########################
+
+#
+Object EnemyBTopSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyBlue2.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialNod -90
+Double SpatialTilt 180
+
+#
+Object EnemyBFrontSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyBlue1.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialPosZ 0
+Double SpatialTilt 180
+
+
+#
+Object EnemyBSideSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyBlue2.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialTurn -90
+Double SpatialTilt -90
+
+########################
+
+#
+Object EnemyCTopSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyGreen3.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialNod -90
+Double SpatialTilt 180
+
+#
+Object EnemyCFrontSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyGreen1.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialPosZ 0
+Double SpatialTilt 180
+
+
+#
+Object EnemyCSideSprite Object_Sprite
+String SpriteFilepath "Resources/Textures/spaceshooter/PNG/Enemies/enemyGreen3.png"
+Double SpriteWidth 10
+Double SpriteHeight 10
+Double SpatialTurn -90
+Double SpatialTilt -90

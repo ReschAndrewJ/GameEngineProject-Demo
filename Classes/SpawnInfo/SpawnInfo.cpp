@@ -5,15 +5,10 @@ SpawnInfo::SpawnInfo() {
 
 	createAttribute(ATTRIBUTE_SPAWN_INFO_ENTITY_FILEPATH, Attribute::types::STRING);
 	createAttribute(ATTRIBUTE_SPAWN_INFO_ENTITY_IDENTIFIER, Attribute::types::STRING);
-
+	
 	addProcessFunction(&processFunc, 10);
 }
 SpawnInfo::~SpawnInfo() {}
-
-
-void SpawnInfo::afterCreationFunc(Object* selfptr) {
-	dynamic_cast<SpawnInfo*>(selfptr)->startTimer();
-}
 
 
 void SpawnInfo::processFunc(Object* selfptr, float delta) {
@@ -23,6 +18,9 @@ void SpawnInfo::processFunc(Object* selfptr, float delta) {
 				{ATTRIBUTE_SPATIAL_POSITION_X, selfptr->getAttribute(ATTRIBUTE_SPATIAL_POSITION_X)},
 				{ATTRIBUTE_SPATIAL_POSITION_Y, selfptr->getAttribute(ATTRIBUTE_SPATIAL_POSITION_Y)},
 				{ATTRIBUTE_SPATIAL_POSITION_Z, selfptr->getAttribute(ATTRIBUTE_SPATIAL_POSITION_Z)},	
+				{ATTRIBUTE_SPATIAL_ROTATE_NOD, selfptr->getAttribute(ATTRIBUTE_SPATIAL_ROTATE_NOD)},
+				{ATTRIBUTE_SPATIAL_ROTATE_TURN, selfptr->getAttribute(ATTRIBUTE_SPATIAL_ROTATE_TURN)},
+				{ATTRIBUTE_SPATIAL_ROTATE_TILT, selfptr->getAttribute(ATTRIBUTE_SPATIAL_ROTATE_TILT)},
 		});
 	}
 }

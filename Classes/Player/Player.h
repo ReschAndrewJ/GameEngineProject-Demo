@@ -5,8 +5,10 @@
 
 #include "../../_GameEngineSrc/Engines/Main/Input_Handler.h"
 
+
 const auto OBJECT_CLASS_PLAYER = "Player";
 
+const auto ATTRIBUTE_PLAYER_DAMAGE_SOUND = "PlayerDamageSound";
 
 class Player : public virtual LiveEntity {
 private:
@@ -21,6 +23,10 @@ public:
 protected:
 	// check if an attack condition is met and use that attack
 	virtual void doAttacks();
+	
+	void onDamage() override;
+
+	void onDeath() override;
 
 protected:
 	void getMovementDirection(float move[3]) const override;

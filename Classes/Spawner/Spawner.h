@@ -16,10 +16,16 @@ const auto ATTRIBUTE_SPAWNER_TIME_BETWEEN_SPAWNS = ATTRIBUTE_TIMER_LENGTH;
 // spawns an entity on timerTimeout
 const auto ATTRIBUTE_SPAWNER_TIME_OFFSET = ATTRIBUTE_TIMER_OFFSET;
 
+const auto ATTRIBUTE_SPAWNER_SPAWN_COUNT = "SpawnerCount";
+const auto ATTRIBUTE_SPAWNER_CURRENT_COUNT = "SpawnerCountCurrent";
+
 class Spawner : public virtual Object_Spatial, public virtual SpawnInfo {
 public:
 	Spawner();
 	virtual ~Spawner();
+
+	static void afterCreation_func(Object*);
+	static void process_func(Object*, float);
 };
 
 

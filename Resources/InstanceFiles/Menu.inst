@@ -1,0 +1,64 @@
+
+
+Object Top Menu
+
+
+Child Here Title
+Child Here Prompt
+Child Here MenuBGM
+Child Here CreditsPrompt
+
+#
+Object Title Object_Text
+
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Engine  Demo"
+Integer TextRowLen 6
+Integer TextRowCount 2
+
+Double SpriteWidth 0.7
+Double SpriteHeight 0.5
+
+Double SpatialPosX -0.05
+Double SpatialPosY -0.2
+Boolean SpriteIsVisible true
+
+
+#
+Object Prompt Object_Text
+
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Press Enter"
+
+Double SpriteWidth 0.5
+Double SpriteHeight 0.2
+
+Double SpatialPosX -0.2
+Double SpatialPosY 0.6
+
+
+#
+Object CreditsPrompt Object_Text
+
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Press c to skip to credits"
+
+Double SpriteWidth 0.4
+Double SpriteHeight 0.05
+
+Double SpatialPosX 0.58
+Double SpatialPosY -0.9
+
+#
+Object MenuBGM Object_SoundOutput
+
+# a sound file needs to be loaded and run for the dll symbols to initialize
+String SoundFilepath "Resources/Sounds/Of Far Different Nature - LOOP BOX #2 (CC-BY 4.0)/Of Far Different Nature - Gentle One (CC-BY).ogg"
+Boolean SoundIsMusic true
+Boolean SoundLoop true
+Double SoundStart 0
+Double SoundEnd 33
+
+Double SoundVolume 5
+
+

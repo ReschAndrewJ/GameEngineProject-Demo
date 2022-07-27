@@ -3,7 +3,22 @@
 
 #include "../../_GameEngineSrc/Objects/Camera/Object_Camera.h"
 
+#include <string>
+
 const auto OBJECT_CLASS_STAGE_CONTROL = "StageControl";
+
+//
+const int STAGE_TRANSITION_NONE = 0;
+const int STAGE_TRANSITION_STARTSTAGE = 1;
+const int STAGE_TRANSITION_ENDSTAGE = 2;
+const int STAGE_TRANSITION_FULL = 3;
+const int STAGE_TRANSITION_SMOOTH = 4;
+const auto ATTRIBUTE_STAGE_CONTROL_TRANSITION_STATE = "StageControlTransitionState";
+
+// the file with the stage that is loaded on transition_startstage
+const auto ATTRIBUTE_STAGE_CONTROL_STARTING_STAGE_INST_FILE = "StageControlStartingFile";
+// the identifier for the stage that is loaded on transition_startstage
+const auto ATTRIBUTE_STAGE_CONTROL_STARTING_STAGE_INST_IDENTIFIER = "StageControlStartingId";
 
 class StageControl : public virtual Object_Camera {
 public:
@@ -13,16 +28,31 @@ public:
 	static void processFunc(Object*, float);
 	
 private:
-	void startStage();
-	void endStage();
-	// load the next stage before unloading the completed one, 
-	// temporaily move the player to stage control to not reset the player
-	void transitionStage_Smooth();
-	// fade first stage to black then fade second stage in
-	void transitionStage_Hard();
+
+	// sub functiona of processFunc, 
+	// called if the current transition state is STAGE_TRANSITION_NONE, STAGE_TRANSITION_SMOOTH, ETC.
+	
+	void process_transitionNone(float);
+
+	void process_transitionSmooth(float);
+	void process_transitionHard(float);
+
+	void process_transitionStartOnly(float);
+	void process_transitionEndOnly(float);
 
 
+	// helper variables
+	std::string endingStageId;
+	std::string startingStageId;
 
+	float distanceHoldTop = 0;
+	float distanceHoldBack = 0;
+	float distanceHoldSide = 0;
+	bool holdsSet = false;
+
+	float zOffset = 0;
+	int playerColliderHold = 0;
+	std::string playerId;
 
 };
 

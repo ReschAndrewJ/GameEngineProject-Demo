@@ -22,7 +22,6 @@ public:
 	SpawnInfo();
 	virtual ~SpawnInfo();
 
-	static void afterCreationFunc(Object*);
 	static void processFunc(Object*, float);
 };
 

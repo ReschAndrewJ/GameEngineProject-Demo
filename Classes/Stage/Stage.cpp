@@ -1,6 +1,6 @@
 #include "Stage.h"
 #include "../../General/ViewEnums.h"
-
+#include "../StageBorder/StageBorder.h"
 
 // rotation angles for each stage view
 float fromTop[3] = { -90,0,0 };
@@ -13,6 +13,7 @@ Stage::Stage() {
 
 	createAttribute(ATTRIBUTE_STAGE_NEXT_FILEPATH, Attribute::types::STRING);
 	createAttribute(ATTRIBUTE_STAGE_NEXT_IDENTIFIER, Attribute::types::STRING);
+	createAttribute(ATTRIBUTE_STAGE_TRANSITION_SMOOTH, Attribute::types::BOOLEAN);
 	createAttribute(ATTRIBUTE_STAGE_COMPLETE, Attribute::types::BOOLEAN);
 
 	createAttribute(ATTRIBUTE_STAGE_VIEW, Attribute::types::INTEGER);
@@ -26,6 +27,16 @@ Stage::Stage() {
 	createAttribute(ATTRIBUTE_STAGE_DISTANCE_SPEED, Attribute::types::DOUBLE);
 	setAttribute(ATTRIBUTE_STAGE_ROTATION_SPEED, 100);
 	setAttribute(ATTRIBUTE_STAGE_DISTANCE_SPEED, 500);
+
+	createAttribute(ATTRIBUTE_STAGE_LENGTH, Attribute::types::DOUBLE);
+
+	createAttribute(ATTRIBUTE_STAGE_PLAYER_START_X, Attribute::types::DOUBLE);
+	createAttribute(ATTRIBUTE_STAGE_PLAYER_START_Y, Attribute::types::DOUBLE);
+	createAttribute(ATTRIBUTE_STAGE_PLAYER_START_Z, Attribute::types::DOUBLE);
+
+	createAttribute(ATTRIBUTE_STAGE_TIME_ELAPSED, Attribute::types::DOUBLE);
+	createAttribute(ATTRIBUTE_STAGE_TIME_COUNTING, Attribute::types::BOOLEAN);
+	setAttribute(ATTRIBUTE_STAGE_TIME_COUNTING, true);
 
 	addAfterCreationFunction(&afterCreationFunc);
 	addProcessFunction(&processFunc, 10);
@@ -71,6 +82,12 @@ void Stage::afterCreationFunc(Object* selfptr) {
 
 
 void Stage::processFunc(Object* selfptr, float delta) {
+	// update elapsed time
+	if ((bool)selfptr->getAttribute(ATTRIBUTE_STAGE_TIME_COUNTING)) selfptr->setAttribute(
+		ATTRIBUTE_STAGE_TIME_ELAPSED, (float)selfptr->getAttribute(ATTRIBUTE_STAGE_TIME_ELAPSED) + delta);
+	// check if stage is completed and update completion attribute
+	if (dynamic_cast<Stage*>(selfptr)->isStageComplete()) selfptr->setAttribute(ATTRIBUTE_STAGE_COMPLETE, true);
+	
 	float nod = selfptr->getAttribute(ATTRIBUTE_SPATIAL_ROTATE_NOD);
 	float turn = selfptr->getAttribute(ATTRIBUTE_SPATIAL_ROTATE_TURN);
 	float tilt = selfptr->getAttribute(ATTRIBUTE_SPATIAL_ROTATE_TILT);
@@ -91,6 +108,28 @@ void Stage::processFunc(Object* selfptr, float delta) {
 	default:
 		targetAngles[0] = fromTop[0]; targetAngles[1] = fromTop[1]; targetAngles[2] = fromTop[2];
 		break;
+	}
+	for (const auto& childId : selfptr->getChildrenIdentifiers()) {
+		Object* childPtr = selfptr->getObject(childId);
+		if (childPtr->is_class(OBJECT_CLASS_STAGE_BORDER)) {
+			int side = childPtr->getAttribute(ATTRIBUTE_STAGE_BORDER_SIDE);
+
+			childPtr->setAttribute(ATTRIBUTE_SPRITE_VISIBLE, true);
+			switch (side) {
+			case STAGE_BORDER_TOP:
+				if (nod <= -45) childPtr->setAttribute(ATTRIBUTE_SPRITE_VISIBLE, false);
+				break;
+			case STAGE_BORDER_RIGHT:
+				if (turn <= -45) childPtr->setAttribute(ATTRIBUTE_SPRITE_VISIBLE, false);
+				break;
+			case STAGE_BORDER_FRONT:
+				if (nod >= -45 && turn >= -45) childPtr->setAttribute(ATTRIBUTE_SPRITE_VISIBLE, false);
+				break;
+			default:
+				break;
+			}
+
+		}
 	}
 
 

@@ -1,0 +1,252 @@
+
+
+
+Object CreditsStage Stage_Survival
+
+#TOP
+Integer StageView 1 
+Double StageTopDistance 300
+Double StageStartZ 150
+
+Double StageSurvivalEndTime 57
+
+Double StageLength 600
+
+String SoundFilepath "Resources/Sounds/Of Far Different Nature - LOOP BOX #2 (CC-BY 4.0)/Of Far Different Nature - Withstand (CC-BY).ogg"
+Boolean SoundIsMusic true
+Boolean SoundLoop true
+Double SoundStart 0
+Double SoundEnd 44
+Double SoundVolume 10
+
+Child Here CreditsSpawnInfo
+
+Child Here TopBorder
+Child Here BottomBorder
+Child Here FrontBorder
+Child Here BackBorder
+Child Here LeftBorder
+Child Here RightBorder
+
+Object CreditsSpawnInfo SpawnInfo
+String SpawnInfoEntityFilepath "Resources/InstanceFiles/CreditsStage.inst"
+String SpawnInfoEntityIdentifier "Credits"
+Double TimerLength 1
+
+Double SpatialPosZ 400
+Double SpatialPosX 2000
+
+
+Object Credits EnemyA
+Double LiveEntitySpeed -50
+
+Child Here Offset
+
+Object Offset Object_Spatial
+Double SpatialPosX -2000
+
+Child Here SpritesCreditText1
+Child Here SpritesCreditText2
+
+Child Here SoundsCreditText1
+
+Child Here FontsCreditText1
+
+Child Here SpecialThanksText1
+Child Here SpecialThanksText2
+Child Here SelfCredit
+Child Here PlayerThanks
+
+# RESOURCE CREDITS
+
+Object SpritesCreditText1 Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Seamless Space BackGrounds by    ScreamingBrainStudios.itch.io"
+Integer TextRowLen 31
+Integer TextRowCount 2
+Double SpriteWidth 160
+Double SpriteHeight 40
+Boolean SpriteIsVisible true
+Double SpatialPosZ 0
+Double SpatialNod 90
+
+Object SpritesCreditText2 Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Space Shooter Redux by   Kenny"
+Integer TextRowLen 23
+Integer TextRowCount 2
+Double SpriteWidth 120
+Double SpriteHeight 40
+Boolean SpriteIsVisible true
+Double SpatialPosZ 200
+Double SpatialNod 90
+
+
+Object SoundsCreditText1 Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Of Far Different Nature Loop Box 2 by   Of Far Different Nature"
+Integer TextRowLen 38
+Integer TextRowCount 2
+Double SpriteWidth 150
+Double SpriteHeight 40
+Boolean SpriteIsVisible true
+Double SpatialPosZ 400
+Double SpatialNod 90
+
+
+Object FontsCreditText1 Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Silver Font by   Poppy Works"
+Integer TextRowLen 15
+Integer TextRowCount 2
+Double SpriteWidth 100
+Double SpriteHeight 40
+Boolean SpriteIsVisible true
+Double SpatialPosZ 600
+Double SpatialNod 90
+
+
+# SPECIAL THANKS
+
+Object SpecialThanksText1 Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Special Thanks"
+Double SpriteWidth 100
+Double SpriteHeight 20
+Boolean SpriteIsVisible true
+Double SpatialPosZ 900
+Double SpatialNod 90
+
+Object SpecialThanksText2 Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "To Corey Trese,                                          For Being my Mentor for the Duration of this Project"
+Integer TextRowLen 55
+Integer TextRowCount 2
+Double SpriteWidth 220
+Double SpriteHeight 40
+Boolean SpriteIsVisible true
+Double SpatialPosZ 1000
+Double SpatialNod 90
+
+# SELF CREDIT
+
+Object SelfCredit Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Game and Engine Made by   Andrew Resch (me)"
+Integer TextRowLen 24
+Integer TextRowCount 2
+Double SpriteWidth 200
+Double SpriteHeight 40
+Boolean SpriteIsVisible true
+Double SpatialPosZ 1400
+Double SpatialNod 90
+
+# PLAYER THANKS
+
+Object PlayerThanks Object_Text
+String SpriteFilepath "Resources/Fonts/Silver/Silver.ttf"
+String TextString "Thanks for Playing!"
+Double SpriteWidth 300
+Double SpriteHeight 80
+Boolean SpriteIsVisible true
+Double SpatialPosZ 1900
+Double SpatialNod 90
+
+
+
+#################################
+Object TopBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY -300
+Double SpatialNod 90
+
+#################################
+Object BottomBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosY 300
+Double SpatialNod 90
+
+#################################
+Object LeftBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX -300
+Double SpatialTurn 90
+
+#################################
+Object RightBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 3
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosX 300
+Double SpatialTurn 90
+
+#################################
+Object FrontBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+Integer StageBorderSide 2
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ 300
+
+#################################
+Object BackBorder StageBorder
+
+String SpriteFilepath "Resources/Textures/SeamlessSpaceBackgrounds/Starfields/Starfield 3.png"
+Integer AnimatedSpriteRowCnt 1
+Integer AnimatedSpriteColCnt 1
+
+Double SpriteWidth 600
+Double SpriteHeight 600
+Double ColliderWidth 600
+Double ColliderHeight 600
+Double ColliderDepth 1
+
+Double SpatialPosZ -300
